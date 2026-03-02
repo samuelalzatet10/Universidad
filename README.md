@@ -2,4 +2,4 @@
 **Estudiante:** Samuel Alzate
 
 ## Diagrama de Clases UML
-![Diagrama de Clases](./img/Diagrama.png)k
+![Diagrama de Clases](./img/Diagrama.png)
