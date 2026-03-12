@@ -1,27 +1,31 @@
 package co.edu.unquindio.poo.model;
 
 public class Tarea {
-    private String descripcionTarea;
-    private double costoManoObra;
+    private String codigo;
+    private String nombre;
+    private double precio;
 
-    public Tarea(String descripcionTarea, double costoManoObra) {
-        this.descripcionTarea = descripcionTarea;
-        this.costoManoObra = costoManoObra;
+    public Tarea(String codigo, String nombre, double precio) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.precio = precio;
     }
-    public String getDescripcionTarea() {
-        return descripcionTarea;
-    }
-    public void setDescripcionTarea(String descripcionTarea) {
-        this.descripcionTarea = descripcionTarea;
-    }
-    public double getCostoManoObra() {
-        return costoManoObra;
-    }
-    public void setCostoManoObra(double costoManoObra) {
-        this.costoManoObra = costoManoObra;
-    }
+
+
+    public String getCodigo() { return codigo; }
+    public String getNombre() { return nombre; }
+    public double getPrecio() { return precio; }
+
+
+    public void setCodigo(String codigo) { this.codigo = codigo; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    public void setPrecio(double precio) { this.precio = precio; }
+
     @Override
     public String toString() {
-        return "Tarea: " + descripcionTarea + ", Costo: $" + String.format("%,.2f", costoManoObra);
+        return "TAREA [" + codigo + "]\n" +
+                "Descripción: " + nombre + "\n" +
+                "Costo Servicio: $" + precio + "\n" +
+                "---------------------------";
     }
 }

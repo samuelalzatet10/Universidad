@@ -2,45 +2,60 @@ package co.edu.unquindio.poo.model;
 
 public class Repuesto {
     private String nombre;
+    private double precio;
     private String codigo;
     private int cantidad;
-    private double costoUnitario;
 
-    public Repuesto(String nombre, String codigo, int cantidad, double costoUnitario) {
+    /**
+     * Constructor de Repuesto
+     * @param nombre Descripción del repuesto (ej. Pastillas de freno)
+     * @param precio Precio unitario
+     * @param cantidad Unidades utilizadas
+     */
+    public Repuesto(String nombre, double precio,String codigo, int cantidad) {
         this.nombre = nombre;
-        this.codigo = codigo;
+        this.precio = precio;
         this.cantidad = cantidad;
-        this.costoUnitario = costoUnitario;
     }
-    public double subtotal(){
-        return cantidad * costoUnitario;
-    }
+
+
     public String getNombre() {
         return nombre;
     }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+
+    public double getPrecio() {
+        return precio;
     }
     public String getCodigo() {
         return codigo;
     }
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
+
     public int getCantidad() {
         return cantidad;
     }
+
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-    public double getCostoUnitario() {
-        return costoUnitario;
+
+    public double calcularSubtotal() {
+        return precio * cantidad;
     }
-    public void setCostoUnitario(double costoUnitario) {
-        this.costoUnitario = costoUnitario;
-    }
+
     @Override
     public String toString() {
-        return "Repuesto: " + nombre + ", Cantidad: " + cantidad + ", Subtotal: $" +  String.format("%,.2f", subtotal());
+        return  nombre + " | Cant: " + cantidad + "|Codigo: " +  codigo + " | Total: $" + calcularSubtotal();
     }
 }
