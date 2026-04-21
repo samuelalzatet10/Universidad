@@ -97,6 +97,27 @@ public class Empresa {
         }
         return "La nómina total de '" + nombre + "' es: $" + String.format("%.2f", total);
     }
+    public List<Empleado> empleadosConSalarioMayorA(float valor) {
+        List<Empleado> resultado = new ArrayList<>();
+        for (Empleado e : listaEmpleados) {
+            if (e.calcularSalarioNeto() > valor) {
+                resultado.add(e);
+            }
+        }
+        return resultado;
+    }
+    public List<EmpleadoTemporal> empleadosTemporalesMasDe100Dias() {
+        List<EmpleadoTemporal> resultado = new ArrayList<>();
+        for (Empleado e : listaEmpleados) {
+            if (e instanceof EmpleadoTemporal) {
+                EmpleadoTemporal et = (EmpleadoTemporal) e;
+                if (et.getDiasTrabajados() > 100) {
+                    resultado.add(et);
+                }
+            }
+        }
+        return resultado;
+    }
 
     public List<ResumenPago> obtenerResumenesPagos() {
         List<ResumenPago> listaResumenes = new ArrayList<>();
